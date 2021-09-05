@@ -20,11 +20,17 @@ function TrimmerTab() {
     let error = ValidateCollectionFile(collectionFile);
     if (error.length > 0) {
       setFileInfo(error);
+      return
     }
-    else {
-      var fileContents = await collectionFile?.text() || "";
-      setFileInfo(fileContents);
-    }
+
+    var fileContents = await collectionFile?.text() || "";
+    // parse csv file into object, 2d array?
+
+    // remove duplicates
+
+    // turn it back into string?
+
+    // download???
   }
 
   return (
