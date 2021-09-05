@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { TrimmerTab, AboutTab } from './Tabs';
