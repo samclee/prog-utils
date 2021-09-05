@@ -19,7 +19,7 @@ function TrimmerTab() {
   const onGenerateClicked = async () => {
     let error = ValidateCollectionFile(collectionFile);
     if (error.length > 0) {
-      setFileInfo("Bad file");
+      setFileInfo(error);
     }
     else {
       var fileContents = await collectionFile?.text() || "";
@@ -31,7 +31,12 @@ function TrimmerTab() {
     <div>
       <h1>Trimmer stuff go here</h1>
       <input type="file" onChange={onFileChange} />
-      <button type="button" onClick={onGenerateClicked}>Remove Duplicates</button>
+      <button 
+        type="button"
+        onClick={onGenerateClicked}
+        disabled={collectionFile === undefined}>
+          Remove Duplicates
+      </button>
       <p>{fileInfo}</p>
     </div>
   )
